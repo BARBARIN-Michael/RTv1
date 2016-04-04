@@ -6,7 +6,7 @@
 /*   By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/27 21:03:28 by roblabla          #+#    #+#             */
-/*   Updated: 2016/04/02 13:30:08 by mbarbari         ###   ########.fr       */
+/*   Updated: 2016/04/04 07:29:00 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void		init_env(t_env *env)
 	env->ratio = env->resolution.width / (float)env->resolution.height;
 	env->invw = 1 / (float)env->resolution.width;
 	env->invh = 1 / (float)env->resolution.height;
-	env->nb_thread = 8;
+	env->nb_thread = 14;
 	env->sampling = 4;
 	env->anglex = 0;
 	env->angley = 0;

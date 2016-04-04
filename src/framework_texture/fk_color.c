@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/22 12:49:55 by root              #+#    #+#             */
-/*   Updated: 2016/03/31 12:48:25 by mbarbari         ###   ########.fr       */
+/*   Updated: 2016/04/04 08:10:43 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ t_color3		process_color(t_object *arr, t_intersect it, t_env env,
 		int depth)
 {
 	t_color3		outcolor;
-	t_color3		refl_color;
+	t_color3		ref_color;
 
 	if (ft_strcmp(it.obj->mat.texture, "checkerboard") == 0)
 		it.color = fk_checkerboard(it);
@@ -82,10 +82,17 @@ t_color3		process_color(t_object *arr, t_intersect it, t_env env,
 	outcolor = fk_finalcolor(arr, it, env);
 	if (it.obj->reflection_index != 0.0 && depth < env.depth)
 	{
-		refl_color = ft_trace_ray(arr,
+		ref_color = ft_trace_ray(arr,
 				create_reflection(it.ray, it), depth + 1, env);
 		outcolor = vector_sum(outcolor,
-				vector_mul(refl_color, it.obj->reflection_index));
+				vector_mul(ref_color, it.obj->reflection_index));
+	}
+	if (it.obj->refraction_index != 0.0 && depth < env.depth)
+	{
+		ref_color = ft_trace_ray(arr, create_refraction(it.ray, it),
+				depth + 1, env);
+		outcolor = vector_sum(outcolor,
+				vector_mul(ref_color, it.obj->refraction_index));
 	}
 	return (outcolor);
 }

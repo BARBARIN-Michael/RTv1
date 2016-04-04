@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/01 16:09:24 by mbarbari          #+#    #+#             */
-/*   Updated: 2016/03/31 12:45:57 by mbarbari         ###   ########.fr       */
+/*   Updated: 2016/04/04 08:03:43 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include "framework_collision/fk_intersect.h"
 # include "framework_light/fk_normal.h"
 
-# define WIDTH 1920
-# define HEIGHT 1080
+# define WIDTH 1024
+# define HEIGHT 760
 # define NB_OBJ 25
 
 typedef struct s_env	t_env;
