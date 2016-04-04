@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/01 20:34:17 by mbarbari          #+#    #+#             */
-/*   Updated: 2016/03/31 13:00:25 by mbarbari         ###   ########.fr       */
+/*   Updated: 2016/04/04 08:03:48 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include "framework_light/fk_light.h"
 #include "framework_math/fk_math.h"
 #include "framework_math/fk_vector.h"
+
+float g_indice = 1.0;
 
 t_color3	ft_trace_ray(t_object arr[NB_OBJ], t_ray ray, int depth, t_env env)
 {
