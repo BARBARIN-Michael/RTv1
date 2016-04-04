@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/29 21:18:55 by mbarbari          #+#    #+#             */
-/*   Updated: 2015/12/13 23:41:50 by mbarbari         ###   ########.fr       */
+/*   Updated: 2016/04/04 08:39:01 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_bool			intersect_sphere(t_ray ray, t_sphere *obj, float *t)
 {
 	t_vector3		etoc;
 	float			radius;
+	float			t0;
+	float			t1;
 	float			vector_radius;
 
 	if (obj->radius == 0.0f)
@@ -28,6 +30,11 @@ t_bool			intersect_sphere(t_ray ray, t_sphere *obj, float *t)
 	if (*t > (radius = SQUARE(obj->radius)))
 		return (FALSE);
 	*t = sqrt(radius - *t);
-	*t = FT_MIN((vector_radius - *t), (vector_radius + *t));
-	return (TRUE);
+	t0 = (vector_radius - *t);
+	t1 = (vector_radius + *t);
+	if (t0 > 1e-4f)
+		return ((*t = t0), TRUE);
+	else if (t1 > 1e-4f)
+		return ((*t = t1), TRUE);
+	return (FALSE);
 }

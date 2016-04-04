@@ -6,7 +6,7 @@
 #    By: rlambert <rlambert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 11:25:08 by rlambert          #+#    #+#              #
-#    Updated: 2016/04/01 17:29:00 by mbarbari         ###   ########.fr        #
+#    Updated: 2016/04/04 07:27:23 by mbarbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SRCS += src/framework_collision/fk_collision.c					\
 		src/framework_collision/fk_createscene.c				\
 		src/framework_collision/fk_routine.c				\
 		src/framework_collision/fk_reflection.c					\
+		src/framework_collision/fk_refraction.c					\
 		src/framework_collision/fk_antialiasing.c				\
 		src/framework_collision/fk_intersect.c
 
